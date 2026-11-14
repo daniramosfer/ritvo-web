@@ -1,0 +1,11 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="ritvo.prueba.1" group-title="Prueba",Prueba 1 · HLS fMP4 (Apple)
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8
+#EXTINF:-1 tvg-id="ritvo.prueba.2" group-title="Prueba",Prueba 2 · HLS MPEG-TS (Apple)
+https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8
+#EXTINF:-1 tvg-id="ritvo.prueba.3" group-title="Prueba",Prueba 3 · HEVC (Apple)
+https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8
+#EXTINF:-1 tvg-id="ritvo.prueba.4" group-title="Prueba http",Prueba 4 · http sin cifrar (Apple)
+http://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8
+#EXTINF:-1 tvg-id="ritvo.prueba.5" group-title="Prueba",Prueba 5 · 16:9 (Apple)
+https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_16x9/bipbop_16x9_variant.m3u8
