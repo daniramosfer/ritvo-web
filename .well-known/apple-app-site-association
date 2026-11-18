@@ -1,0 +1,13 @@
+{
+  "webcredentials": {
+    "apps": ["T6RAX52YAC.app.ritvo"]
+  },
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["T6RAX52YAC.app.ritvo"],
+        "components": [{"/": "/tele"}]
+      }
+    ]
+  }
+}
