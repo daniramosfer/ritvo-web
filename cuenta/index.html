@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://api.ritvo.app; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>Cuenta de Ritvo</title>
+  <link rel="stylesheet" href="../estilo.css">
+  <link rel="stylesheet" href="cuenta.css">
+  <script src="cuenta.js" defer></script>
+</head>
+<body>
+<main>
+  <header>
+    <a class="wordmark" href="../">Ritvo<span>.</span></a>
+    <button type="button" id="language" class="quiet" lang="en">English</button>
+  </header>
+
+  <h1 data-text="title">Cuenta de Ritvo</h1>
+  <p class="note" data-text="intro">Consulta tus aparatos o borra tu cuenta.</p>
+
+  <form id="login" class="account-panel">
+    <label for="nickname" data-text="nickname">Apodo</label>
+    <input id="nickname" name="nickname" minlength="3" maxlength="20" pattern="[A-Za-z0-9._]{3,20}"
+      autocomplete="username webauthn" autocapitalize="none" spellcheck="false" required>
+    <button data-text="login">Entrar con llave de acceso</button>
+    <p class="note" data-text="qr">Si tu llave está en el móvil, elige usar otro aparato y escanea el QR del navegador. Ten el móvil cerca.</p>
+  </form>
+
+  <section id="account" hidden>
+    <div class="account-heading">
+      <p id="handle"></p>
+      <button type="button" id="logout" class="quiet" data-text="logout">Cerrar sesión</button>
+    </div>
+    <h2 data-text="devices">Aparatos</h2>
+    <ul id="devices"></ul>
+    <h2 data-text="deleteTitle">Borrar la cuenta</h2>
+    <p class="note" data-text="deleteInfo">Se borrarán tu apodo, tus llaves de acceso, tus aparatos y tus datos cifrados en Ritvo. Las copias caducan en 30 días. Gestiona tu suscripción Pro en la tienda donde la compraste.</p>
+    <form id="delete" class="account-panel">
+      <label for="confirmation" data-text="confirm">Escribe tu apodo para confirmar</label>
+      <input id="confirmation" maxlength="20" autocomplete="off" autocapitalize="none" spellcheck="false" required>
+      <button class="danger" data-text="deleteButton">Borrar mi cuenta</button>
+    </form>
+  </section>
+
+  <p id="status" role="status" aria-live="polite"></p>
+  <p id="help" class="note" data-text="help">Si has perdido tu llave, puedes borrar la cuenta desde Ajustes en un aparato con sesión iniciada. Las cuentas inactivas se borran a los 18 meses.</p>
+  <footer><a id="privacy" href="../privacidad.html" data-text="privacy">Política de privacidad</a></footer>
+</main>
+</body>
+</html>
