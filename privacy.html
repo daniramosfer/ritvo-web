@@ -17,10 +17,10 @@
 
   <h1>Privacy Policy</h1>
   <!-- Pendiente de la revisión jurídica (B-200). -->
-  <p class="meta">Effective 14 November 2026 · Applies to Ritvo for iPhone, iPad and Apple TV. The Spanish version is the reference text.</p>
+  <p class="meta">Effective 22 November 2026 · Applies to Ritvo for iPhone, iPad and Apple TV, its server (api.ritvo.app) and the account website (ritvo.app). The Spanish version is the reference text.</p>
 
   <div class="summary">
-    <p><strong>In short:</strong> A Ritvo account is optional. With an account, your lists are encrypted on your device before they sync. You can also use your private iCloud. Ritvo does not track you across apps or websites. The free version for iPhone and iPad shows <strong>non-personalised</strong> ads from Google AdMob, which receives some technical data to show them; Ritvo Pro has no ads.</p>
+    <p><strong>In short:</strong> Ritvo doesn’t track you or sell data. Your lists and preferences stay on your device or travel encrypted, so we can’t read them. Ritvo has its own server that provides sports data without knowing who you are. The <strong>Ritvo account is optional</strong>: it asks for no email, phone number or name, only a nickname you make up, and you can delete it at any time from the app. The free version for iPhone and iPad shows <strong>non-personalised</strong> Google AdMob ads; with Ritvo Pro there are no ads.</p>
   </div>
 
   <h2>Who is responsible</h2>
@@ -33,7 +33,7 @@
   <ul>
     <li><strong>Your IPTV lists</strong> (address, channels, categories and PIN). Each list’s username and password are kept in the device’s Keychain.</li>
     <li><strong>Your preferences:</strong> favourite channels, the teams and competitions you follow, channel history and settings.</li>
-    <li><strong>Temporary copies:</strong> images (crests, logos) and, if you use the live buffer, a few minutes of the channel you are watching. They are removed automatically.</li>
+    <li><strong>Temporary copies:</strong> images (crests, logos, programme artwork) and, if you use the live buffer, a few minutes of the channel you are watching. They are removed automatically.</li>
     <li><strong>Crash and performance reports:</strong> when the app closes suddenly or runs slowly, the system (MetricKit, on iPhone and iPad) or the app itself (on Apple TV) leaves a technical report. It holds app and device data (version, system, memory, where the code failed), not personal data. It is kept only on your device; you can read and delete it in Settings › Diagnostics, and it reaches us only if you choose to share it.</li>
   </ul>
 
@@ -42,23 +42,40 @@
     <thead><tr><th>Destination</th><th>What is sent</th><th>Why</th></tr></thead>
     <tbody>
       <tr><td>Your IPTV provider’s server</td><td>Your username and password for that list, and the requests for channels and guide</td><td>To download your list and play your channels. It goes straight to your provider, through no Ritvo server.</td></tr>
-      <tr><td>ESPN</td><td>Requests for matches, statistics and crests, with no data about you</td><td>To show sports data.</td></tr>
+      <tr><td>Ritvo’s server (api.ritvo.app, behind Cloudflare)</td><td>Requests for scores, match pages, tables and team searches, with no data about you. For guide artwork: the title, channel and episode of the programmes in your guide, without saying who you are or which list you use</td><td>To give you sports data, which it gets from our provider (API-Sports), and programme artwork. Your IP address is only used in memory to limit abuse and is not stored in the database; the server’s and Cloudflare’s technical logs may include it for a few days.</td></tr>
+      <tr><td>API-Sports (media.api-sports.io)</td><td>Requests for team crests, with no data about you</td><td>To show crests. Like any website serving images, it sees your IP address.</td></tr>
       <tr><td>YouTube</td><td>Requests for thumbnails; tapping a highlight opens YouTube</td><td>The competitions’ official highlights. What you do on YouTube is covered by Google’s policy.</td></tr>
       <tr><td>Google (AdMob and its consent tool), only without Ritvo Pro, on iPhone and iPad</td><td>Your IP address (and, from it, an approximate location), technical data about the device and the app, which ads are shown and whether you tap them, and diagnostics from its SDK. Nothing about what you watch, follow or play in Ritvo</td><td>To show non-personalised ads, measure them and prevent fraud, and remember your consent choice. Google acts under its <a href="https://policies.google.com/privacy">privacy policy</a> and explains <a href="https://policies.google.com/technologies/partner-sites">how it uses data from apps that use its services</a>.</td></tr>
       <tr><td>Your private iCloud (Apple)</td><td>Your lists, favourites, follows and some settings, encrypted</td><td>To have them on your other devices. You can turn it off in Settings › iCloud. We can’t read them.</td></tr>
+      <tr><td>Apple (notifications)</td><td>With an account: each device’s notification token, kept by our server. If you turn on match alerts: the device registration explained under “Notifications”. If you follow a match in a Live Activity: the match’s broadcast channel, with no token of yours</td><td>To alert you about sign-ins to your account and about the goals, cards and results of what you follow, and to update the score on the Lock Screen.</td></tr>
       <tr><td>Your local network</td><td>The match state between your iPhone and your Apple TV</td><td>To follow a match on both at once. It doesn’t leave your home.</td></tr>
     </tbody>
   </table>
 
+  <h2>The Ritvo account (optional)</h2>
+  <p>It keeps your lists, favourites and settings on all your devices, Android included. Without an account, Ritvo works the same on each device.</p>
+  <ul>
+    <li><strong>What we keep:</strong> your nickname; for each device, a random identifier, its public key, its name (encrypted), the hash of its access token, its Apple notification token and when it was last used; the public keys of your passkeys; and your <strong>encrypted box</strong> with lists, favourites and settings.</li>
+    <li><strong>End-to-end encryption:</strong> the box is encrypted on your devices with a key only they have. We keep blobs we cannot open: we don’t see your lists, their passwords or which channels you watch.</li>
+    <li><strong>What we don’t keep:</strong> email, phone number, name, date of birth, location, viewing history, advertising identifier or your IP address in the database.</li>
+    <li><strong>How long:</strong> while you use it. If no device connects for <strong>18 months</strong>, it is deleted entirely. A deleted account’s nickname stays reserved for 30 days (we keep only its hash) so no one can impersonate it.</li>
+    <li><strong>Deleting it:</strong> from the app on any device (Settings › Account › Delete Account), or from the account website with your passkey. It is deleted at once. Account backups are kept separately for <strong>30 days</strong>; if one ever had to be restored, deleted accounts are deleted again.</li>
+    <li><strong>Legal basis:</strong> performing the service you request when you create the account.</li>
+  </ul>
+
   <h2>Camera</h2>
   <p>If you scan your TV to sync a match, the camera reads the scoreboard clock. Images are processed on the device and are never saved or sent.</p>
 
-  <h2>Ritvo Account</h2>
-  <p>If you create an account, we store your nickname, the public key for your passkey, your devices and when they were last used, and your encrypted sync data. We also store a public key to verify your recovery code. You keep the code and the keys that open the data. Device names are encrypted. Your viewing history stays on your device.</p>
-  <p>You can <a href="cuenta/?lang=en">delete your account</a> on the web or in Settings. Account data is deleted from the service when you delete the account and expires from its dedicated backup within 30 days. Inactive accounts are deleted after 18 months.</p>
-
   <h2>Notifications</h2>
-  <p>Match reminders are scheduled on your device. If you allow account alerts, Ritvo stores a device token and uses Apple’s push notification service. The alert contains a generic message and, when needed, a request identifier. Ritvo fetches details when you open the app.</p>
+  <p>Reminders before a match are scheduled on your device. Your account’s security alerts (for example, “someone wants to sign in to your account”) come through Apple with each device’s notification token. Score Live Activities update through an Apple broadcast channel, with no data about you.</p>
+  <p><strong>Match alerts</strong> (goals, cards, half-time, full time and line-ups). If you turn them on, your device registers with our server, with no account or personal data. We keep:</p>
+  <ul>
+    <li>a random identifier created by the app (never the advertising identifier) and the hash of a secret, so that only your device can change its registration;</li>
+    <li>the Apple notification token and, if you let your team’s match appear on its own on the Lock Screen, the Live Activities start token;</li>
+    <li>which teams, competitions and matches you follow and which alerts you want for each, whether you hide scores (“No Spoilers”) and the alerts’ delay;</li>
+    <li>the match you are watching and how far behind your picture is, for 3 hours at most, so you are never alerted before you see it.</li>
+  </ul>
+  <p>We don’t keep your name, email, IP address, language, lists or history. The registration is deleted when you turn alerts off or remove the permission, and after 60 days without the app connecting. Legal basis: performing the service you ask for when you turn alerts on.</p>
 
   <h2>Ritvo Pro</h2>
   <p>The subscription is handled by Apple with your Apple ID. Ritvo only receives, on your device, Apple’s confirmation that you are Pro; we never see your payment details. You can cancel it in your Apple ID settings, under Subscriptions.</p>
@@ -77,15 +94,24 @@
 
   <h2>What we don’t do</h2>
   <ul>
-    <li>We don’t sell data. The only third party that receives data for advertising is Google, as explained under «Ads».</li>
+    <li>We don’t sell data. The only third party that receives data for advertising is Google, as explained under “Ads”.</li>
     <li>We use no analytics or tracking tools, and there are no personalised ads.</li>
+    <li>We don’t ask for data that identifies you, including from minors: the account is optional and only uses a nickname.</li>
   </ul>
+
+  <h2>Who helps us</h2>
+  <ul>
+    <li><strong>Contabo GmbH (Germany, European Union) and Cloudflare:</strong> Contabo hosts the api.ritvo.app server in the European Union, and Cloudflare protects it. Cloudflare sees IP addresses and paths, not the encrypted content of accounts.</li>
+    <li><strong>API-Sports:</strong> sells us the sports data. Our server requests it with no data about you.</li>
+    <li><strong>Apple:</strong> iCloud, notifications and the Ritvo Pro purchase. <strong>Google:</strong> ads in the free version.</li>
+  </ul>
+  <p>If an authority asked us for an account’s data, we could only hand over what we keep (above), never the content of your box, which we cannot open.</p>
 
   <h2>Reports you share with Apple</h2>
   <p>If “Share With App Developers” is on in your device’s settings, Apple may send us anonymous crash reports. You choose this in Settings › Privacy &amp; Security › Analytics &amp; Improvements.</p>
 
   <h2>Your rights</h2>
-  <p>You can review your devices, delete the account or contact us for a copy of your account data. For the ads’ data, you can change your consent in Settings › Advertising and exercise your rights with Google through its <a href="https://policies.google.com/privacy">privacy policy</a>. To remove everything from Ritvo, delete the app and, if you use iCloud, its data in your Apple ID’s iCloud settings. For any question or complaint, write to <a href="mailto:soporte@ritvo.app">soporte@ritvo.app</a>. You can also complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es">aepd.es</a>) or your local authority.</p>
+  <p>Without an account, we keep no data about you and there is nothing of ours to access, correct or delete. With an account, you can see and remove your devices in Settings › Account and delete the whole account at once; for any other request for access, rectification, portability or objection, write to us. For the ads’ data, you can change your consent in Settings › Advertising and exercise your rights with Google through its <a href="https://policies.google.com/privacy">privacy policy</a>. To remove everything from Ritvo on your devices, delete the app and, if you use iCloud, its data in your Apple ID’s iCloud settings. For any question or complaint, write to <a href="mailto:soporte@ritvo.app">soporte@ritvo.app</a>. You can also complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es">aepd.es</a>) or your local authority.</p>
 
   <h2>Changes</h2>
   <p>If what Ritvo does with data changes, we will update this page and its date before releasing the version that changes it.</p>

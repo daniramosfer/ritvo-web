@@ -17,10 +17,10 @@
 
   <h1>Política de privacidad</h1>
   <!-- Pendiente de la revisión jurídica (B-200). -->
-  <p class="meta">En vigor desde el 14 de noviembre de 2026 · Se aplica a Ritvo para iPhone, iPad y Apple TV.</p>
+  <p class="meta">En vigor desde el 22 de noviembre de 2026 · Se aplica a Ritvo para iPhone, iPad y Apple TV, a su servidor (api.ritvo.app) y a la web de la cuenta (ritvo.app).</p>
 
   <div class="summary">
-    <p><strong>En pocas palabras:</strong> La cuenta de Ritvo es opcional. Con ella, tus listas se cifran en el aparato antes de sincronizarse. También puedes usar tu iCloud privado. Ritvo no te sigue entre apps ni webs. La versión gratis para iPhone y iPad muestra anuncios <strong>no personalizados</strong> de Google AdMob, que recibe algunos datos técnicos para mostrarlos; con Ritvo Pro no hay anuncios.</p>
+    <p><strong>En pocas palabras:</strong> Ritvo no te sigue ni vende datos. Tus listas y gustos se quedan en tu aparato o viajan cifrados, de forma que nosotros no podemos leerlos. Ritvo tiene un servidor propio que da los datos deportivos sin saber quién eres. La <strong>cuenta de Ritvo es opcional</strong>: no pide email, teléfono ni nombre, solo un apodo que inventas, y puedes borrarla cuando quieras desde la app. La versión gratis para iPhone y iPad muestra anuncios <strong>no personalizados</strong> de Google AdMob; con Ritvo Pro no hay anuncios.</p>
   </div>
 
   <h2>Quién es el responsable</h2>
@@ -33,7 +33,7 @@
   <ul>
     <li><strong>Tus listas IPTV</strong> (dirección, canales, categorías y PIN). El usuario y la contraseña de cada lista se guardan en el Llavero del aparato.</li>
     <li><strong>Tus gustos:</strong> canales favoritos, equipos y competiciones que sigues, historial de canales y ajustes.</li>
-    <li><strong>Copias temporales:</strong> imágenes (escudos, logos) y, si usas el colchón de directo, unos minutos del canal que estás viendo. Se borran solas.</li>
+    <li><strong>Copias temporales:</strong> imágenes (escudos, logos, carátulas de programas) y, si usas el colchón de directo, unos minutos del canal que estás viendo. Se borran solas.</li>
     <li><strong>Informes de fallos y rendimiento:</strong> cuando la app se cierra de golpe o va lenta, el sistema (MetricKit, en iPhone y iPad) o la propia app (en Apple TV) deja un informe técnico. Contiene datos de la app y del aparato (versión, sistema, memoria, dónde falló el código), no datos personales. Se guarda solo en tu aparato; puedes verlo y borrarlo en Ajustes › Diagnóstico, y solo nos llega si tú decides compartirlo.</li>
   </ul>
 
@@ -42,23 +42,40 @@
     <thead><tr><th>Destino</th><th>Qué se envía</th><th>Para qué</th></tr></thead>
     <tbody>
       <tr><td>El servidor de tu proveedor IPTV</td><td>Tu usuario y contraseña de esa lista y las peticiones de canales y guía</td><td>Descargar tu lista y reproducir tus canales. Va directo a tu proveedor; no pasa por ningún servidor de Ritvo.</td></tr>
-      <tr><td>ESPN</td><td>Peticiones de partidos, estadísticas y escudos, sin ningún dato tuyo</td><td>Mostrar los datos deportivos.</td></tr>
+      <tr><td>El servidor de Ritvo (api.ritvo.app, tras Cloudflare)</td><td>Peticiones de resultados, fichas, clasificaciones y búsquedas de equipos, sin ningún dato tuyo. Para las carátulas de la guía: el título, la cadena y el episodio de los programas de tu guía, sin decir quién eres ni qué lista usas</td><td>Darte los datos deportivos, que obtiene de nuestro proveedor (API-Sports), y las carátulas de los programas. Tu dirección IP solo se usa en memoria para limitar abusos y no la guardamos en la base de datos; los registros técnicos del servidor y de Cloudflare pueden incluirla unos días.</td></tr>
+      <tr><td>API-Sports (media.api-sports.io)</td><td>Peticiones de escudos de equipos, sin ningún dato tuyo</td><td>Mostrar los escudos. Como cualquier web que sirve imágenes, ve tu dirección IP.</td></tr>
       <tr><td>YouTube</td><td>Peticiones de miniaturas; al tocar un resumen, se abre YouTube</td><td>Los resúmenes oficiales de las competiciones. Lo que hagas en YouTube se rige por la política de Google.</td></tr>
       <tr><td>Tu iCloud privado (Apple)</td><td>Tus listas, favoritos, seguidos y algunos ajustes, cifrados</td><td>Tenerlos en tus otros aparatos. Se puede desactivar en Ajustes › iCloud. Nosotros no podemos leerlos.</td></tr>
       <tr><td>Google (AdMob y su herramienta de consentimiento), solo sin Ritvo Pro, en iPhone y iPad</td><td>Tu dirección IP (y, de ella, una ubicación aproximada), datos técnicos del aparato y de la app, qué anuncios se muestran y si los tocas, y diagnóstico de su SDK. Nada de lo que ves, sigues o reproduces en Ritvo</td><td>Mostrar anuncios no personalizados, medirlos y evitar el fraude, y recordar tu elección de consentimiento. Google actúa según su <a href="https://policies.google.com/privacy">política de privacidad</a> y explica <a href="https://policies.google.com/technologies/partner-sites">cómo usa los datos de las apps que usan sus servicios</a>.</td></tr>
+      <tr><td>Apple (avisos)</td><td>Si tienes cuenta: el token de avisos de cada aparato, que guarda nuestro servidor. Si activas los avisos de partidos: el registro del aparato que se explica en «Notificaciones». Si sigues un partido en una Live Activity: el canal de difusión del partido, sin ningún token tuyo</td><td>Avisarte de accesos a tu cuenta y de los goles, tarjetas y resultados de lo que sigues, y actualizar el marcador en la pantalla de bloqueo.</td></tr>
       <tr><td>Tu red local</td><td>El estado del partido entre tu iPhone y tu Apple TV</td><td>Seguir un partido en los dos a la vez. No sale de casa.</td></tr>
     </tbody>
   </table>
 
+  <h2>La cuenta de Ritvo (opcional)</h2>
+  <p>Sirve para tener tus listas, favoritos y ajustes en todos tus aparatos, también en Android. Sin cuenta, Ritvo funciona igual en cada aparato.</p>
+  <ul>
+    <li><strong>Lo que guardamos:</strong> tu apodo; por cada aparato, un identificador aleatorio, su clave pública, su nombre (cifrado), el hash de su token de acceso, su token de avisos de Apple y la fecha de su último uso; las claves públicas de tus llaves de acceso (passkeys), y tu <strong>caja cifrada</strong> con listas, favoritos y ajustes.</li>
+    <li><strong>Cifrado de extremo a extremo:</strong> la caja se cifra en tus aparatos con una clave que solo tienen ellos. Nosotros guardamos bultos que no podemos abrir: no vemos tus listas, ni sus contraseñas, ni qué canales ves.</li>
+    <li><strong>Lo que no guardamos:</strong> email, teléfono, nombre, fecha de nacimiento, ubicación, historial de lo que ves, identificador de publicidad ni tu dirección IP en la base de datos.</li>
+    <li><strong>Cuánto tiempo:</strong> mientras la uses. Si ningún aparato se conecta en <strong>18 meses</strong>, se borra entera. El apodo de una cuenta borrada queda reservado 30 días (solo guardamos su hash) para que nadie se haga pasar por ella.</li>
+    <li><strong>Borrarla:</strong> desde la app, en cualquier aparato (Ajustes › Cuenta › Borrar la cuenta), o desde la web de la cuenta con tu passkey. Se borra en el acto. Las copias de seguridad de la cuenta se guardan aparte y duran <strong>30 días</strong>; si alguna vez hubiera que restaurar una, las cuentas borradas se vuelven a borrar.</li>
+    <li><strong>Base legal:</strong> la ejecución del servicio que pides al crear la cuenta.</li>
+  </ul>
+
   <h2>Cámara</h2>
   <p>Si escaneas la tele para sincronizar un partido, la cámara lee el reloj del marcador. Las imágenes se procesan en el aparato y no se guardan ni se envían.</p>
 
-  <h2>Cuenta de Ritvo</h2>
-  <p>Si creas una cuenta, guardamos tu apodo, la clave pública de tu llave de acceso, los aparatos y su último uso, y los datos de sincronización cifrados. También guardamos una clave pública para comprobar el código de recuperación. Tú conservas el código y las claves que abren los datos. Los nombres de los aparatos viajan cifrados. Tu historial de reproducción queda en el aparato.</p>
-  <p>Puedes <a href="cuenta/borrar/">borrar tu cuenta</a> desde la web o desde Ajustes. Los datos de la cuenta se eliminan del servicio al borrarla y de su copia dedicada en un máximo de 30 días. Las cuentas inactivas se borran tras 18 meses.</p>
-
   <h2>Notificaciones</h2>
-  <p>Los avisos de partidos se programan en tu aparato. Si permites los avisos de cuenta, Ritvo guarda un token del aparato y usa el servicio de notificaciones de Apple. El aviso contiene un mensaje genérico y, si hace falta, un identificador de la petición. Los detalles se consultan al abrir Ritvo.</p>
+  <p>Los recordatorios antes de un partido se programan en tu aparato. Los avisos de seguridad de tu cuenta (por ejemplo, «alguien quiere entrar en tu cuenta») llegan a través de Apple con el token de avisos de cada aparato. Las Live Activities del marcador se actualizan por un canal de difusión de Apple, sin ningún dato tuyo.</p>
+  <p><strong>Avisos de partidos</strong> (goles, tarjetas, descanso, final y alineaciones). Si los activas, tu aparato se registra en nuestro servidor, sin cuenta ni datos personales. Guardamos:</p>
+  <ul>
+    <li>un identificador aleatorio que crea la app (nunca el de publicidad) y el hash de un secreto para que solo tu aparato cambie su registro;</li>
+    <li>el token de avisos de Apple y, si dejas que el partido de tu equipo aparezca solo en la pantalla de bloqueo, el token de inicio de las Live Activities;</li>
+    <li>qué equipos, competiciones y partidos sigues y qué avisos quieres de cada uno, si ocultas los resultados («Sin spoilers») y el retraso de los avisos;</li>
+    <li>el partido que estás viendo y cuánto va por detrás tu imagen, como mucho 3 horas, para no avisarte antes de verlo.</li>
+  </ul>
+  <p>No guardamos tu nombre, correo, dirección IP, idioma, listas ni historial. El registro se borra si apagas los avisos o quitas el permiso, y a los 60 días sin que la app se conecte. Base legal: la ejecución del servicio que pides al activar los avisos.</p>
 
   <h2>Ritvo Pro</h2>
   <p>La suscripción la gestiona Apple con tu Apple ID. Ritvo solo recibe en tu aparato la confirmación de Apple de que eres Pro; nunca vemos tus datos de pago. Puedes cancelarla en los ajustes de tu Apple ID, en Suscripciones.</p>
@@ -79,13 +96,22 @@
   <ul>
     <li>No vendemos datos. El único tercero que recibe datos para la publicidad es Google, como se explica en «Anuncios».</li>
     <li>No usamos herramientas de analítica ni de seguimiento, y no hay anuncios personalizados.</li>
+    <li>No pedimos datos que te identifiquen, tampoco a menores: la cuenta es opcional y solo usa un apodo.</li>
   </ul>
+
+  <h2>Quién nos ayuda</h2>
+  <ul>
+    <li><strong>Contabo GmbH (Alemania, Unión Europea) y Cloudflare:</strong> Contabo aloja el servidor de api.ritvo.app en la Unión Europea, y Cloudflare lo protege. Cloudflare ve las direcciones IP y las rutas, no el contenido cifrado de las cuentas.</li>
+    <li><strong>API-Sports:</strong> nos vende los datos deportivos. Nuestro servidor se los pide sin datos tuyos.</li>
+    <li><strong>Apple:</strong> iCloud, avisos y la compra de Ritvo Pro. <strong>Google:</strong> anuncios de la versión gratis.</li>
+  </ul>
+  <p>Si una autoridad nos pidiera datos de una cuenta, solo podríamos entregar lo que guardamos (arriba), nunca el contenido de tu caja, que no podemos abrir.</p>
 
   <h2>Informes que compartes con Apple</h2>
   <p>Si en los ajustes de tu aparato tienes activado «Compartir con desarrolladores», Apple puede enviarnos informes de fallos anónimos. Lo decides tú en Ajustes › Privacidad y seguridad › Análisis y mejoras.</p>
 
   <h2>Tus derechos</h2>
-  <p>Puedes revisar tus aparatos, borrar la cuenta o escribirnos para pedir una copia de sus datos. Sobre los datos de los anuncios, puedes cambiar tu consentimiento en Ajustes › Publicidad y ejercer tus derechos ante Google desde su <a href="https://policies.google.com/privacy">política de privacidad</a>. Para borrar todo lo de Ritvo, elimina la app y, si usas iCloud, sus datos en los ajustes de iCloud de tu Apple ID. Si tienes una duda o una queja, escríbenos a <a href="mailto:soporte@ritvo.app">soporte@ritvo.app</a>. También puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">aepd.es</a>).</p>
+  <p>Sin cuenta, no guardamos datos tuyos y no hay nada nuestro que consultar, corregir o borrar. Con cuenta, puedes ver y quitar tus aparatos en Ajustes › Cuenta y borrar la cuenta entera en el acto; para cualquier otra petición de acceso, rectificación, portabilidad u oposición, escríbenos. Sobre los datos de los anuncios, puedes cambiar tu consentimiento en Ajustes › Publicidad y ejercer tus derechos ante Google desde su <a href="https://policies.google.com/privacy">política de privacidad</a>. Para borrar todo lo de Ritvo de tus aparatos, elimina la app y, si usas iCloud, sus datos en los ajustes de iCloud de tu Apple ID. Si tienes una duda o una queja, escríbenos a <a href="mailto:soporte@ritvo.app">soporte@ritvo.app</a>. También puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">aepd.es</a>).</p>
 
   <h2>Cambios</h2>
   <p>Si cambia lo que hace Ritvo con los datos, actualizaremos esta página y su fecha antes de publicar la versión que lo cambie.</p>
