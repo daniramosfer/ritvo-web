@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <title>Vincular el Apple TV · Ritvo</title>
+  <meta name="description" content="Cómo vincular el Apple TV con tu cuenta de Ritvo desde el iPhone.">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<main>
+  <header>
+    <a class="wordmark" href="index.html">Ritvo<span>.</span></a>
+    <nav><a href="soporte.html">Soporte</a></nav>
+  </header>
+
+  <h1>Vincular el Apple TV</h1>
+  <p class="meta">Has escaneado el código de la tele, pero Ritvo no se ha abierto en este aparato.</p>
+
+  <div class="summary">
+    <p id="code-line" hidden><strong>Tu código:</strong> <span id="code" style="font-family: ui-monospace, Menlo, monospace; letter-spacing: 0.08em"></span></p>
+    <p>Abre <strong>Ritvo</strong> en el iPhone o iPad que ya usa tu cuenta y ve a <strong>Ajustes › Cuenta › Aparatos › Añadir aparato</strong>. Allí puedes escanear el QR de la tele con «Escanear el QR de la tele» o escribir el código.</p>
+  </div>
+
+  <h2>Si no tienes Ritvo en este aparato</h2>
+  <p>Instálalo desde el App Store y entra en tu cuenta en Ajustes › Cuenta. Después vuelve a escanear el código: la tele lo cambia sola cada 10 minutos.</p>
+
+  <h2>¿Sigue sin funcionar?</h2>
+  <p>Escríbenos a <a href="mailto:soporte@ritvo.app">soporte@ritvo.app</a> con el modelo de la tele y la versión de Ritvo.</p>
+</main>
+<script>
+  // Only the eight-letter code is shown; the key after «#» never leaves this page.
+  const code = new URLSearchParams(location.search).get('c') || '';
+  if (/^[BCDFGHJKLMNPQRSTVWXZ]{8}$/.test(code)) {
+    document.getElementById('code').textContent = code.slice(0, 4) + '-' + code.slice(4);
+    document.getElementById('code-line').hidden = false;
+  }
+</script>
+</body>
+</html>
