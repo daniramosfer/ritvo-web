@@ -17,7 +17,7 @@
     invalid_country: "Choose your country.",
     invalid_language: "Choose a language.",
     invalid_devices: "Choose at least one device.",
-    invalid_iptv: "Tell us whether you already have an IPTV list.",
+    invalid_iptv: "Tell us whether you already have an IPTV playlist.",
     invalid_source: "Tell us how you heard about Ritvo.",
     invalid_name: "The name is too long.",
     invalid_models: "The model text is too long.",
@@ -52,14 +52,30 @@
     invalid_devices: "devices", invalid_iptv: "iptv", invalid_source: "source", consent_required: "consent",
   };
 
+  // Conserva las ayudas de cada campo al asociarle un error para VoiceOver.
+  function clearErrors() {
+    form.querySelectorAll(".invalid").forEach((element) => element.classList.remove("invalid"));
+    form.querySelectorAll('[aria-invalid="true"]').forEach((input) => {
+      input.removeAttribute("aria-invalid");
+      const descriptions = (input.getAttribute("aria-describedby") || "").split(/\s+/).filter((id) => id && id !== "status");
+      if (descriptions.length) input.setAttribute("aria-describedby", descriptions.join(" "));
+      else input.removeAttribute("aria-describedby");
+    });
+  }
+
   function show(code) {
     status.textContent = Object.hasOwn(text, code) ? text[code] : text.other;
     status.className = "status error";
-    form.querySelectorAll(".invalid").forEach((element) => element.classList.remove("invalid"));
+    clearErrors();
     const name = Object.hasOwn(fields, code) && fields[code];
     if (!name) return;
     const inputs = form.querySelectorAll(`[name="${name}"]`);
-    inputs.forEach((input) => (input.closest(".choice, .consent") || input).classList.add("invalid"));
+    inputs.forEach((input) => {
+      (input.closest(".choice, .consent") || input).classList.add("invalid");
+      input.setAttribute("aria-invalid", "true");
+      const descriptions = input.getAttribute("aria-describedby");
+      input.setAttribute("aria-describedby", descriptions ? descriptions + " status" : "status");
+    });
     inputs[0]?.focus();
   }
 
@@ -91,6 +107,7 @@
     if (busy) return;
     const problem = check();
     if (problem) return show(problem);
+    clearErrors();
     busy = true;
     const button = form.querySelector('button[type="submit"]');
     button.disabled = true;
@@ -117,4 +134,17 @@
       button.disabled = false;
     }
   });
+})();
+
+// Una sola llegada del gol cuando el teléfono entra en pantalla.
+(() => {
+  const arena = document.querySelector(".arena");
+  if (!arena || !window.IntersectionObserver || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  arena.classList.add("motion-ready");
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    arena.classList.add("is-visible");
+    observer.disconnect();
+  }, { threshold: 0.15 });
+  observer.observe(arena.querySelector(".phone"));
 })();

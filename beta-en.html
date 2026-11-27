@@ -1,52 +1,91 @@
 <!doctype html>
-<html lang="en">
+<html data-type="software" lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
   <title>Ritvo beta · Sign up</title>
-  <meta name="description" content="Sign up to try Ritvo on TestFlight before it launches: matches, stats and your own IPTV list on iPhone, iPad, Mac and Apple TV.">
+  <meta name="description" content="Sign up to try Ritvo on TestFlight before it launches: matches, stats and your own IPTV playlist on iPhone, iPad, Mac and Apple TV.">
   <link rel="alternate" hreflang="es" href="beta.html">
-  <link rel="stylesheet" href="estilo.css">
   <link rel="stylesheet" href="beta.css">
+  <meta name="theme-color" content="#121316">
+  <meta name="color-scheme" content="dark">
+  <link rel="apple-touch-icon" sizes="192x192" href="beta-assets/app-icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="beta-assets/app-icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="beta-assets/app-icon-512.png">
+  <meta property="og:title" content="Ritvo beta · The match and the score, together at last.">
+  <meta property="og:description" content="Try Ritvo on TestFlight: scores, stats and your own IPTV playlist. No channels or broadcasts included.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ritvo.app/beta-en.html">
+  <meta property="og:image" content="https://ritvo.app/beta-assets/og-beta-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ritvo beta. The match and the score, together at last. iPhone preview with fictional teams and your own playlist.">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<main>
-  <header>
-    <a class="wordmark" href="index.html">Ritvo<span>.</span></a>
-    <nav><a href="privacy.html#beta">Privacy</a><a href="beta.html" hreflang="es" data-keep-query>Español</a></nav>
-  </header>
+<a class="skip-link" href="#contenido">Skip to content</a>
+<header class="site-header wrap">
+  <a class="wordmark" href="index.html" aria-label="Ritvo"><span aria-hidden="true">ri<span class="brand-violet">tv</span>o<span class="brand-violet">.</span></span></a>
+  <span class="beta-label">BETA <span>/ TESTFLIGHT</span></span>
+  <nav aria-label="Main navigation"><a href="privacy.html#beta">Privacy</a><a class="language-link" href="beta.html" hreflang="es" lang="es" data-keep-query>Español</a></nav>
+</header>
+<main id="contenido">
+<section class="hero wrap" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title">The match and the score, <em>together at last.</em></h1>
+    <p class="lead">Scores, stats and your own IPTV playlist. Ritvo includes no channels or broadcasts.</p>
+    <p class="beta-invite">We’re getting ready for kick-off. Try the free TestFlight beta and help us shape Ritvo.</p>
+    <a class="button" href="#formulario">I want to try the beta <span aria-hidden="true">↗</span></a>
 
-  <h1>Try Ritvo before anyone else</h1>
-  <p class="lead">We are looking for sports fans to try the beta on TestFlight, on iPhone, iPad, Mac and Apple TV.</p>
-
-  <div class="summary">
-    <p><strong>What Ritvo is.</strong> An app that brings your teams' scores, line-ups, stats and alerts together with the IPTV list you already subscribe to. <strong>Ritvo includes no channels or broadcasts:</strong> you add your own M3U or Xtream Codes list, or try a sample list if you don't have one yet.</p>
+  </div>
+  <div class="arena" role="img" aria-label="Illustrative Ritvo preview with fictional teams: live score, recent form, matches and spoiler-free mode.">
+  <div class="pitch" aria-hidden="true"><i></i><b></b></div>
+  <div class="phone" aria-hidden="true">
+    <div class="phone-top"><span>9:41</span><span class="island"></span><span class="battery"></span></div>
+    <div class="notification-slot"><div class="goal-toast" aria-hidden="true"><img src="beta-assets/app-icon-192.png" width="40" height="40" alt=""><div><span>Ritvo <small>now</small></span><strong>GOAL! A second for North.</strong><p>NOR <b>2 – 1</b> SOU <span>67′</span></p></div></div></div>
+    <div class="app-heading"><strong>Matches</strong><img class="app-avatar" src="beta-assets/app-icon-192.png" alt="" width="32" height="32"></div>
+    <div class="app-dates"><span>Yesterday<b>18</b></span><span class="today">Today<b>19</b></span><span>Tomorrow<b>20</b></span></div>
+    <div class="app-filters"><span class="active-filter">Football</span><span>Basketball</span><span>All</span></div>
+    <div class="match-featured">
+      <div class="match-meta"><span>HORIZON CUP</span><span class="live"><i></i>67′</span></div>
+      <div class="scoreboard"><div><span class="team team-north">NOR</span><b>North</b></div><strong class="match-score"><span class="changing-digit"><span class="digit-before">1</span><span class="digit-after">2</span></span><span class="score-separator">·</span><span class="score-away">1</span></strong><div><span class="team team-south">SOU</span><b>South</b></div></div>
+      <div class="form-runs"><span><i class="win">W</i><i class="draw">D</i><i class="win">W</i><i class="loss">L</i><i class="win">W</i></span><span><i class="loss">L</i><i class="win">W</i><i class="draw">D</i><i class="win">W</i><i class="draw">D</i></span></div>
+      <div class="watch-row"><span class="sync-dot"></span><b>Where to watch ›</b><span>Your playlist</span></div>
+      <p class="sync-caption">Synced with your TV · +12 s</p>
+    </div>
+    <div class="app-list-title">YOUR MATCHES <span>2</span></div>
+    <div class="match-row"><span class="minute">Q3<br>04:12</span><div><span><i class="team-dot coral"></i>Orbit <b>84</b></span><span><i class="team-dot blue"></i>Comet <b>79</b></span></div></div>
+    <div class="match-row spoiler-row"><span class="minute">21:00</span><div><span><i class="team-dot lilac"></i>Dawn <b>–</b></span><span><i class="team-dot mint"></i>Breeze <b>–</b></span></div><span class="spoiler-label">Spoiler-free</span></div>
+    <div class="app-tabs"><span class="selected">Matches</span><span>Following</span><span>TV</span></div>
+    <div class="home-indicator"></div>
   </div>
 
-  <h2>What we ask of you</h2>
-  <ul>
-    <li>Use Ritvo for a few weeks with your matches and your teams.</li>
-    <li>Tell us what fails or what you miss, from the app itself (Settings › Help › Suggestions and Problems).</li>
-    <li>Don't forward the invitation: it is personal and goes to your email.</li>
-  </ul>
+</div>
+  <div class="hero-support"><p class="platforms">iPhone <span>·</span> iPad <span>·</span> Mac <span>·</span> Apple TV</p>
+    <p class="disclosure"><strong>You bring your playlist.</strong> Ritvo includes no channels or broadcasts. Works with M3U and Xtream Codes.</p></div>
+</section>
+<div class="feature-strip wrap">
+  <p class="feature-live"><strong>Goals when you see them.</strong><span>A scoreboard synced with your TV.</span></p>
+  <p class="feature-spoiler"><strong>Spoiler-free.</strong><span>Spoiler-free mode. You decide when.</span></p>
+  <p class="feature-multiview"><strong>More than one match.</strong><span>Multiview to keep up with the action.</span></p>
+</div><section class="signup-section wrap" aria-labelledby="formulario">
+  <aside class="signup-intro" aria-labelledby="signup-intro-title">
+    <h2 id="signup-intro-title">Our next <br>line-up <br><em>includes you.</em></h2>
+    <p>We’re looking for sports fans who want to make Ritvo better.</p>
 
-  <h2>How it works</h2>
-  <ol class="steps">
-    <li>You fill this in (under a minute).</li>
-    <li>We invite people in batches, depending on the devices and countries we need to test.</li>
-    <li>If you are in a batch, you get an email from TestFlight (Apple) to install the beta. It's free.</li>
-  </ol>
-
-  <h2 id="formulario">Sign up</h2>
-  <form id="signup" action="https://api.ritvo.app/v1/beta/signup" method="post" novalidate>
+  </aside>
+  <div class="form-panel"><div class="form-heading"><h2 id="formulario" tabindex="-1">Join the beta</h2><p>Three sections and you’re on the list. Optional fields are marked.</p></div>
+    <form aria-labelledby="formulario" id="signup" action="https://api.ritvo.app/v1/beta/signup" method="post" novalidate>
     <input type="hidden" name="page" value="en">
 
+<section class="form-block" aria-labelledby="block-1"><h3 id="block-1"><span aria-hidden="true">01</span>Contact</h3>
     <fieldset>
+      <legend class="sr-only">Contact details</legend>
       <div class="field">
         <label class="label" for="email">Email</label>
-        <input id="email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com">
-        <p class="hint">Your Apple ID email is easiest: TestFlight will write to you here.</p>
+        <input id="email" aria-describedby="email-hint" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="you@example.com">
+        <p id="email-hint" class="hint">Your Apple ID email is easiest: TestFlight will write to you here.</p>
       </div>
       <div class="field">
         <label class="label" for="name">Name <span class="optional">(optional)</span></label>
@@ -97,82 +136,89 @@
         </div>
       </div>
     </fieldset>
-
+</section><section class="form-block" aria-labelledby="block-2"><h3 id="block-2"><span aria-hidden="true">02</span>How you watch</h3>
     <fieldset id="devices-group">
       <legend>Which devices would you use it on?</legend>
-      <div class="choices">
-        <label class="choice"><input type="checkbox" name="devices" value="iphone"> iPhone</label>
-        <label class="choice"><input type="checkbox" name="devices" value="ipad"> iPad</label>
-        <label class="choice"><input type="checkbox" name="devices" value="mac"> Mac</label>
-        <label class="choice"><input type="checkbox" name="devices" value="appletv"> Apple TV</label>
+      <p class="hint choice-hint">Choose at least one. You can select several.</p>
+      <div class="choices devices-choices">
+        <label class="choice"><input class="sr-only" type="checkbox" name="devices" value="iphone"> iPhone</label>
+        <label class="choice"><input class="sr-only" type="checkbox" name="devices" value="ipad"> iPad</label>
+        <label class="choice"><input class="sr-only" type="checkbox" name="devices" value="mac"> Mac</label>
+        <label class="choice"><input class="sr-only" type="checkbox" name="devices" value="appletv"> Apple TV</label>
       </div>
-      <div class="field" style="margin-top: 12px">
+      <div class="field models-field">
         <label class="label" for="models">Model and system version <span class="optional">(if you know)</span></label>
         <input id="models" name="models" type="text" maxlength="200" placeholder="iPhone 15, iOS 26.1 · Apple TV 4K (3rd gen.)">
       </div>
     </fieldset>
-
     <fieldset>
-      <div class="field">
-        <label class="label" for="sports">Which sports, leagues or teams do you follow? <span class="optional">(optional)</span></label>
-        <textarea id="sports" name="sports" maxlength="300" rows="2" placeholder="Football: Arsenal and the Premier League · NBA · Champions League"></textarea>
-      </div>
-    </fieldset>
-
-    <fieldset>
-      <legend>Do you already have an IPTV list?</legend>
+      <legend>Do you already have an IPTV playlist?</legend>
       <div class="choices roomy">
-        <label class="choice"><input type="radio" name="iptv" value="m3u" required> Yes, M3U</label>
-        <label class="choice"><input type="radio" name="iptv" value="xtream"> Yes, Xtream Codes</label>
-        <label class="choice"><input type="radio" name="iptv" value="unsure"> Yes, not sure which type</label>
-        <label class="choice"><input type="radio" name="iptv" value="none"> Not yet</label>
+        <label class="choice"><input class="sr-only" type="radio" name="iptv" value="m3u" required> Yes, M3U</label>
+        <label class="choice"><input class="sr-only" type="radio" name="iptv" value="xtream"> Yes, Xtream Codes</label>
+        <label class="choice"><input class="sr-only" type="radio" name="iptv" value="unsure"> Yes, not sure which type</label>
+        <label class="choice"><input class="sr-only" type="radio" name="iptv" value="none"> Not yet</label>
       </div>
       <p class="hint">Don't tell us which provider you use: we don't need it and don't keep it.</p>
     </fieldset>
-
     <fieldset>
       <legend>How do you watch matches today? <span class="optional">(pick any)</span></legend>
       <div class="choices roomy">
-        <label class="choice"><input type="checkbox" name="watch" value="paytv"> Pay TV</label>
-        <label class="choice"><input type="checkbox" name="watch" value="streaming"> Official streaming apps</label>
-        <label class="choice"><input type="checkbox" name="watch" value="iptv_app"> IPTV list in another app</label>
-        <label class="choice"><input type="checkbox" name="watch" value="web"> In the browser</label>
-        <label class="choice"><input type="checkbox" name="watch" value="other"> Some other way</label>
+        <label class="choice"><input class="sr-only" type="checkbox" name="watch" value="paytv"> Pay TV</label>
+        <label class="choice"><input class="sr-only" type="checkbox" name="watch" value="streaming"> Official streaming apps</label>
+        <label class="choice"><input class="sr-only" type="checkbox" name="watch" value="iptv_app"> IPTV playlist in another app</label>
+        <label class="choice"><input class="sr-only" type="checkbox" name="watch" value="web"> In the browser</label>
+        <label class="choice"><input class="sr-only" type="checkbox" name="watch" value="other"> Some other way</label>
       </div>
     </fieldset>
-
+</section><section class="form-block" aria-labelledby="block-3"><h3 id="block-3"><span aria-hidden="true">03</span>What you follow</h3>
     <fieldset>
+      <legend class="sr-only">Your sports</legend>
+      <div class="field">
+        <label class="label" for="sports">Which sports, leagues or teams do you follow? <span class="optional">(optional)</span></label>
+        <textarea id="sports" name="sports" maxlength="300" rows="2" placeholder="Football, basketball, tennis…"></textarea>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend class="sr-only">Your expectations</legend>
       <div class="field">
         <label class="label" for="expectations">What do you expect from Ritvo? <span class="optional">(optional)</span></label>
-        <textarea id="expectations" name="expectations" maxlength="600" rows="3" placeholder="What you would like it to do, or what you miss in what you use today"></textarea>
+        <textarea id="expectations" name="expectations" maxlength="600" rows="3" placeholder="What you would like it to do, or what's missing from what you use today"></textarea>
       </div>
     </fieldset>
-
     <fieldset>
       <legend>How did you hear about us?</legend>
       <div class="choices">
-        <label class="choice"><input type="radio" name="source" value="mastodon" required> Mastodon</label>
-        <label class="choice"><input type="radio" name="source" value="telegram"> Telegram</label>
-        <label class="choice"><input type="radio" name="source" value="other"> Other</label>
+        <label class="choice"><input class="sr-only" type="radio" name="source" value="mastodon" required> Mastodon</label>
+        <label class="choice"><input class="sr-only" type="radio" name="source" value="telegram"> Telegram</label>
+        <label class="choice"><input class="sr-only" type="radio" name="source" value="other"> Other</label>
       </div>
     </fieldset>
-
-    <div class="trap" aria-hidden="true">
+</section>    <div class="trap" aria-hidden="true">
       <label for="website">Leave this field empty</label>
       <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
     </div>
 
+    <div class="form-finish">
     <label class="consent">
       <input type="checkbox" name="consent" value="yes" required>
       <span>I agree that Ritvo keeps these answers to invite me to the beta and to learn who is interested. If I am invited, my name and email are uploaded to Apple's TestFlight. They are deleted when the beta ends and after 12 months at most; sooner if I ask at <a href="mailto:soporte@ritvo.app">soporte@ritvo.app</a>. More in the <a href="privacy.html#beta">privacy policy</a>.</span>
     </label>
 
-    <button type="submit">Sign me up</button>
+    <button type="submit">Join the beta <span aria-hidden="true">↗</span></button>
     <p id="status" class="status" role="status" aria-live="polite"></p>
+    </div>
   </form>
-
-  <footer>Ritvo · <a href="support.html">Support</a> · <a href="privacy.html#beta">Privacy policy</a> · <a href="beta.html" hreflang="es" data-keep-query>Inscripción en castellano</a></footer>
+  </div>
+  <div class="signup-explainer"><ol class="signup-steps">
+      <li><b>Tell us how you watch</b><span>Your devices, your sports and what you want from Ritvo.</span></li>
+      <li><b>We put together each batch</b><span>We invite people based on the devices and countries we need to test.</span></li>
+      <li><b>Your invitation arrives by email</b><span>If you’re in a batch, Apple will email your TestFlight invitation. Free and personal: don’t forward it.</span></li>
+    </ol>
+    <details class="beta-details"><summary>What do we ask of testers?</summary><p>Use Ritvo for a few weeks with your matches and teams. Tell us what fails or what’s missing from Settings › Help › Suggestions and Problems.</p><p>No playlist yet? You can try a sample playlist.</p></details></div>
+</section>
 </main>
+<footer class="site-footer wrap"><a class="wordmark" href="index.html" aria-label="Ritvo"><span aria-hidden="true">ri<span class="brand-violet">tv</span>o<span class="brand-violet">.</span></span></a><p>Every match. One place.</p><nav aria-label="Footer"><a href="support.html">Support</a><a href="privacy.html#beta">Privacy policy</a></nav></footer>
 <script src="beta.js"></script>
 </body>
 </html>
