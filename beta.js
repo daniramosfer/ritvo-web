@@ -320,7 +320,7 @@
   function tick(now) {
     frame = 0;
     if (document.hidden || paused || reduced.matches) return;
-    if (now - previous >= 1000 / 30 - .5) {
+    if (scrollY < height && now - previous >= 1000 / 30 - .5) {
       time += Math.min((now - previous) / 1000, .05);
       previous = now;
       draw();
