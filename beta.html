@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Beta de Ritvo · Apúntate</title>
+  <meta name="description" content="Apúntate para probar Ritvo en TestFlight antes de que salga: partidos, estadísticas y tu propia lista IPTV en iPhone, iPad, Mac y Apple TV.">
+  <link rel="alternate" hreflang="en" href="beta-en.html">
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="beta.css">
+</head>
+<body>
+<main>
+  <header>
+    <a class="wordmark" href="index.html">Ritvo<span>.</span></a>
+    <nav><a href="privacidad.html#beta">Privacidad</a><a href="beta-en.html" hreflang="en" data-keep-query>English</a></nav>
+  </header>
+
+  <h1>Prueba Ritvo antes que nadie</h1>
+  <p class="lead">Buscamos personas que sigan el deporte para probar la beta en TestFlight, en iPhone, iPad, Mac y Apple TV.</p>
+
+  <div class="summary">
+    <p><strong>Qué es Ritvo.</strong> Una app que junta los resultados, las alineaciones, las estadísticas y los avisos de tus equipos con la lista IPTV que ya tienes contratada. <strong>Ritvo no incluye canales ni emisiones:</strong> pones tu lista M3U o Xtream Codes, o pruebas con una lista de ejemplo si aún no tienes.</p>
+  </div>
+
+  <h2>Qué te pedimos</h2>
+  <ul>
+    <li>Usar Ritvo unas semanas con tus partidos y tus equipos.</li>
+    <li>Contarnos lo que falle o lo que echas de menos desde la propia app (Ajustes › Ayuda › Sugerencias y problemas).</li>
+    <li>No reenviar la invitación: es personal y va a tu correo.</li>
+  </ul>
+
+  <h2>Cómo funciona</h2>
+  <ol class="steps">
+    <li>Rellenas esto (menos de un minuto).</li>
+    <li>Invitamos por tandas, según los aparatos y los países que necesitemos probar.</li>
+    <li>Si entras en una tanda, te llega un correo de TestFlight (de Apple) para instalar la beta. Es gratis.</li>
+  </ol>
+
+  <h2 id="formulario">Apúntate</h2>
+  <form id="signup" action="https://api.ritvo.app/v1/beta/signup" method="post" novalidate>
+    <input type="hidden" name="page" value="es">
+
+    <fieldset>
+      <div class="field">
+        <label class="label" for="email">Correo</label>
+        <input id="email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="tu@correo.com">
+        <p class="hint">El de tu Apple ID es lo más cómodo: TestFlight te escribirá aquí.</p>
+      </div>
+      <div class="field">
+        <label class="label" for="name">Nombre <span class="optional">(opcional)</span></label>
+        <input id="name" name="name" type="text" maxlength="80" autocomplete="name" placeholder="Nombre y apellidos">
+      </div>
+      <div class="pair">
+        <div class="field">
+          <label class="label" for="country">País</label>
+          <select id="country" name="country" required>
+            <option value="" selected disabled>Elige tu país</option>
+            <option value="ES">España</option>
+            <option value="MX">México</option>
+            <option value="AR">Argentina</option>
+            <option value="CO">Colombia</option>
+            <option value="CL">Chile</option>
+            <option value="PE">Perú</option>
+            <option value="VE">Venezuela</option>
+            <option value="EC">Ecuador</option>
+            <option value="UY">Uruguay</option>
+            <option value="PY">Paraguay</option>
+            <option value="BO">Bolivia</option>
+            <option value="CR">Costa Rica</option>
+            <option value="GT">Guatemala</option>
+            <option value="DO">República Dominicana</option>
+            <option value="PR">Puerto Rico</option>
+            <option value="US">Estados Unidos</option>
+            <option value="CA">Canadá</option>
+            <option value="GB">Reino Unido</option>
+            <option value="IE">Irlanda</option>
+            <option value="PT">Portugal</option>
+            <option value="FR">Francia</option>
+            <option value="IT">Italia</option>
+            <option value="DE">Alemania</option>
+            <option value="NL">Países Bajos</option>
+            <option value="BE">Bélgica</option>
+            <option value="CH">Suiza</option>
+            <option value="AD">Andorra</option>
+            <option value="ZZ">Otro país</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="label" for="language">Idioma de la app</label>
+          <select id="language" name="language" required>
+            <option value="es" selected>Castellano</option>
+            <option value="en">Inglés</option>
+            <option value="other">Otro</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset id="devices-group">
+      <legend>¿En qué aparatos lo usarías?</legend>
+      <div class="choices">
+        <label class="choice"><input type="checkbox" name="devices" value="iphone"> iPhone</label>
+        <label class="choice"><input type="checkbox" name="devices" value="ipad"> iPad</label>
+        <label class="choice"><input type="checkbox" name="devices" value="mac"> Mac</label>
+        <label class="choice"><input type="checkbox" name="devices" value="appletv"> Apple TV</label>
+      </div>
+      <div class="field" style="margin-top: 12px">
+        <label class="label" for="models">Modelo y versión del sistema <span class="optional">(si lo sabes)</span></label>
+        <input id="models" name="models" type="text" maxlength="200" placeholder="iPhone 15, iOS 26.1 · Apple TV 4K de 3.ª gen.">
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="field">
+        <label class="label" for="sports">¿Qué deportes, ligas o equipos sigues? <span class="optional">(opcional)</span></label>
+        <textarea id="sports" name="sports" maxlength="300" rows="2" placeholder="Fútbol: el Betis y LaLiga · NBA · Champions"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>¿Tienes ya una lista IPTV?</legend>
+      <div class="choices roomy">
+        <label class="choice"><input type="radio" name="iptv" value="m3u" required> Sí, M3U</label>
+        <label class="choice"><input type="radio" name="iptv" value="xtream"> Sí, Xtream Codes</label>
+        <label class="choice"><input type="radio" name="iptv" value="unsure"> Sí, no sé de qué tipo</label>
+        <label class="choice"><input type="radio" name="iptv" value="none"> Todavía no</label>
+      </div>
+      <p class="hint">No nos digas qué proveedor usas: no lo necesitamos y no lo guardamos.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>¿Cómo ves hoy los partidos? <span class="optional">(los que quieras)</span></legend>
+      <div class="choices roomy">
+        <label class="choice"><input type="checkbox" name="watch" value="paytv"> Tele de pago</label>
+        <label class="choice"><input type="checkbox" name="watch" value="streaming"> Apps oficiales</label>
+        <label class="choice"><input type="checkbox" name="watch" value="iptv_app"> Lista IPTV con otra app</label>
+        <label class="choice"><input type="checkbox" name="watch" value="web"> En el navegador</label>
+        <label class="choice"><input type="checkbox" name="watch" value="other"> De otra forma</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="field">
+        <label class="label" for="expectations">¿Qué esperas de Ritvo? <span class="optional">(opcional)</span></label>
+        <textarea id="expectations" name="expectations" maxlength="600" rows="3" placeholder="Lo que te gustaría que hiciera, o lo que te falta en lo que usas hoy"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>¿Cómo nos has conocido?</legend>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="source" value="mastodon" required> Mastodon</label>
+        <label class="choice"><input type="radio" name="source" value="telegram"> Telegram</label>
+        <label class="choice"><input type="radio" name="source" value="other"> Otro</label>
+      </div>
+    </fieldset>
+
+    <div class="trap" aria-hidden="true">
+      <label for="website">Deja este campo vacío</label>
+      <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <label class="consent">
+      <input type="checkbox" name="consent" value="yes" required>
+      <span>Acepto que Ritvo guarde estas respuestas para invitarme a la beta y conocer a quién le interesa. Si me invitáis, mi nombre y mi correo se suben a TestFlight de Apple. Se borran al acabar la beta y, como mucho, a los 12 meses; antes, si lo pido en <a href="mailto:soporte@ritvo.app">soporte@ritvo.app</a>. Más en la <a href="privacidad.html#beta">política de privacidad</a>.</span>
+    </label>
+
+    <button type="submit">Apuntarme</button>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+  </form>
+
+  <footer>Ritvo · <a href="soporte.html">Soporte</a> · <a href="privacidad.html#beta">Política de privacidad</a> · <a href="beta-en.html" hreflang="en" data-keep-query>Beta sign-up in English</a></footer>
+</main>
+<script src="beta.js"></script>
+</body>
+</html>
